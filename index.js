@@ -9,6 +9,8 @@ const ctx = canvas.getContext('2d')
 
 const music = new Audio('music.mp3');
 
+var controle = document.querySelector('.controle')
+
 let x = 400, y = 0, w = 20, h = 150
 let x1 = 400, y1 = 250, w1 = 20, h1 = 200
 let y2 = 350, x2 = 0, w2 = 50, h2 = 50
@@ -22,6 +24,28 @@ Navigation();
 obsUp();
 obsDown();
 Bird();
+
+// manual key controle code start 
+let i1,i2;
+controle.addEventListener('touchstart', ()=>{
+    controle.style.background = 'red'
+    clearInterval(i2)
+    i1 = setInterval(()=>{
+        if (y2 > 0) {
+            y2 = y2 - 7
+        }
+    }, 30)
+})
+controle.addEventListener('touchend', ()=>{
+    controle.style.background = 'green'
+    clearInterval(i1)
+    i2 = setInterval(() => {
+        if (y2 < 350) {
+            y2 = y2 + 2
+        }
+    }, 30);
+})
+// manual key controle code start 
 
 function restartGame(button) {
 
