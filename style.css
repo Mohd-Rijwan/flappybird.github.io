@@ -1,7 +1,7 @@
-/* *{
+*{
     padding: 0;
     margin: 0;
-} */
+}
 
 body{
     /* background-image:url("Desert.jpg"); */
@@ -18,7 +18,17 @@ body{
 canvas{
     background-color: #B8E8FC;
 }
-
+@media (max-width: 600px){
+    canvas{
+        width: 100vw;
+    }
+}
+.controle{
+    z-index: 100;
+    user-select: none;
+    height: 60px;
+    width: 80px;
+}
 #overplay{
     position: absolute;
     top: 0;
